@@ -84,28 +84,3 @@ body {
   padding: 0;
   margin: 0;
 }
-
-@layer utilities {
-  .list-icon li::before {
-    content: '';
-    background-image: url('images/check-icon.svg');
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-  }
-
-  .list-icon li.white::before {
-    content: '';
-    background-image: url('images/check-icon-red.svg');
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-  }
-
-  .list-icon li.white.first:nth-last-child(1)::before,
-  .list-icon li.white.first:nth-last-child(2)::before {
-    background-image: url('images/check-icon-grey.svg');
-  }
-}

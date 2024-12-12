@@ -2,6 +2,7 @@ import Button from '@/components/button';
 import { pricingLists } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import React, { useState } from 'react';
+import { CheckIcon, CheckIconGrey, CheckIconRed } from './svg';
 
 const Pricing = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -94,17 +95,25 @@ const Pricing = () => {
               aria-label="Select the Christmas Eve pricing plan">
               Select plan
             </Button>
-            <ul className="list-icon space-y-8">
+            <ul className="space-y-8">
               {list.ul.map((item, index) => (
                 <li
                   key={item}
                   className={cn(
                     'flex items-center font-semibold',
-                    list.monthly !== '$12' ? 'text-dark_red white' : '',
+                    list.monthly !== '$12' ? 'text-dark_red' : '',
                     list.monthly === '$5' && index >= list.ul.length - 2
-                      ? 'line-through first'
+                      ? 'line-through'
                       : ''
                   )}>
+                  {list.monthly !== '$12' &&
+                    !(list.monthly === '$5' && index >= list.ul.length - 2) && (
+                      <CheckIconRed />
+                    )}
+                  {list.monthly === '$5' && index >= list.ul.length - 2 && (
+                    <CheckIconGrey />
+                  )}
+                  {list.monthly === '$12' && <CheckIcon />}
                   {item}
                 </li>
               ))}

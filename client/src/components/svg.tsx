@@ -152,37 +152,65 @@ export const SolutionBackground = () => {
   );
 };
 
-export const ArrowLeftCircle = () => {
+export const CheckIcon = () => {
   return (
     <svg
-      width="64"
-      height="64"
-      viewBox="0 0 64 64"
+      className="mr-5"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">
-      <g opacity="0.5">
-        <path
-          d="M32 58.6667C46.7276 58.6667 58.6667 46.7276 58.6667 32C58.6667 17.2724 46.7276 5.33337 32 5.33337C17.2724 5.33337 5.33334 17.2724 5.33334 32C5.33334 46.7276 17.2724 58.6667 32 58.6667Z"
-          stroke="#470000"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M32 21.3334L21.3333 32L32 42.6667"
-          stroke="#470000"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M42.6667 32H21.3333"
-          stroke="#470000"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </g>
+      <circle cx="10" cy="10" r="10" fill="white" />
+      <path
+        d="M6.25 10.625L9.25 12.5L13.75 7.5"
+        stroke="#8F0002"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const CheckIconRed = () => {
+  return (
+    <svg
+      className="mr-5"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="10" fill="#8F0002" />
+      <path
+        d="M6.25 10.625L9.25 12.5L13.75 7.5"
+        stroke="white"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const CheckIconGrey = () => {
+  return (
+    <svg
+      className="mr-5"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="10" fill="#C4C4C4" />
+      <path
+        d="M6.25 10.625L9.25 12.5L13.75 7.5"
+        stroke="white"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 };
