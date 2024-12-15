@@ -1,46 +1,58 @@
 import { navLists } from '@/lib/data';
-import Button from './button';
+import Button from '@/components/button';
+import { useState } from 'react';
+import NavMobile from './nav-mobile';
+import { Link } from 'react-router';
 
 const Headers = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header className="max-w-[1440px] mx-auto bg-red_bg">
-      <nav className="flex items-center justify-between p-6 lg:py-10 lg:px-[100px]">
-        <div className="flex items-center gap-2.5 text-white">
-          <img src="images/logo.svg" alt="GiftChain.ai logo" />
-          <span className="text-lg font-semibold leading-[21px]">
-            GiftChain.ai
-          </span>
+      <nav className="relative flex items-center justify-between p-6 lg:py-10 lg:px-[100px]">
+        <div className="w-full md:w-fit flex justify-between items-center ">
+          <Link to="/" className="flex items-center gap-2.5 text-white">
+            <img
+              src="images/logo.svg"
+              alt="GiftChain.ai logo"
+              className="w-8 h-[30px] md:w-[38px] md:h-9"
+            />
+            <span className="text-base md:text-lg font-semibold leading-[21px]">
+              GiftChain.ai
+            </span>
+          </Link>
+          <button
+            onClick={handleToggleMenu}
+            className="p-2 mr-2 text-gray-100 rounded-lg cursor-pointer md:hidden hover:text-gray-300 hover:bg-gray-100 focus:bg-inherit focus:ring-2 focus:ring-gray-100 rotate-180">
+            <svg
+              aria-hidden="true"
+              className="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clipRule="evenodd"></path>
+            </svg>
+            <svg
+              aria-hidden="true"
+              className="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                fillRule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clipRule="evenodd"></path>
+            </svg>
+            <span className="sr-only">Toggle sidebar</span>
+          </button>
         </div>
-
-        <button
-          data-drawer-target="drawer-navigation"
-          data-drawer-toggle="drawer-navigation"
-          aria-controls="drawer-navigation"
-          className="p-2 mr-2 text-gray-100 rounded-lg cursor-pointer md:hidden hover:text-gray-300 hover:bg-gray-100 focus:bg-inherit focus:ring-2 focus:ring-gray-100 ">
-          <svg
-            aria-hidden="true"
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              fillRule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clipRule="evenodd"></path>
-          </svg>
-          <svg
-            aria-hidden="true"
-            className="hidden w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              fillRule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clipRule="evenodd"></path>
-          </svg>
-          <span className="sr-only">Toggle sidebar</span>
-        </button>
 
         <ul className="hidden md:flex md:gap-6 lg:gap-[40px]">
           {navLists.map((list) => (
@@ -59,9 +71,11 @@ const Headers = () => {
             Sign up
           </Button>
         </div>
+
+        {isOpen && <NavMobile handleToggleMenu={handleToggleMenu} />}
       </nav>
       <section className="relative m-0 px-8 pb-[132px] md:px-[100px] md:pb-[265px]">
-        <h1 className="font-bold text-white text-center text-[40px] leading-[48px] md:text-[64px] md:leading-[81px]">
+        <h1 className="font-bold text-white text-center text-2xl sm:text-[40px] sm:leading-[48px] md:text-[64px] md:leading-[81px] mt-8">
           AI-Powered Blockchain for Effortless Gift Management
         </h1>
         <p className="font-normal text-white text-center leading-8 text-base mt-8 mb-[35px]">

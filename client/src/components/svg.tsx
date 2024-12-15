@@ -138,9 +138,7 @@ export const FullObservability = () => {
 export const SolutionBackground = () => {
   return (
     <svg
-      className="absolute hidden lg:block h-full md:-right-[20px] top-0"
-      width="496"
-      height="686"
+      className="absolute hidden lg:block -inset-y-0 -right-[80px] h-full w-auto"
       viewBox="0 0 496 686"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

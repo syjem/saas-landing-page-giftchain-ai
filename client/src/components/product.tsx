@@ -5,7 +5,7 @@ const Product = () => {
     <section
       id="product"
       className="p-6 pt-8 xs:mt-[180px] sm:pt-12 mt-[100px] sm:mt-[200px] lg:px-[100px] lg:mt-[300px] 2xl:mt-[350px]">
-      <h2 className="text-dark_red font-bold text-[36px] text-center leading-[45px]">
+      <h2 className="text-dark_red font-bold text-2xl md:text-[36px] text-center md:leading-[45px]">
         Everything Santas Need In One Platform
       </h2>
       <p className="mt-6 md:mt-8 mb-10 md:mb-[65px] font-normal text-sm text-[#969696] text-center">

@@ -21,7 +21,7 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="p-6 lg:py-[125px] lg:px-[100px]">
-      <h2 className="text-[52px] font-bold leading-[66px] text-center text-dark_red">
+      <h2 className="text-2xl md:text-[52px] font-bold md:leading-[66px] text-center text-dark_red">
         Our Pricing
       </h2>
       <p className="text-sm font-normal text-center text-[#969696] my-4">
@@ -32,7 +32,7 @@ const Pricing = () => {
       <div className="flex gap-6 justify-center my-6">
         <span
           onClick={handleClickMonthly}
-          className="cursor-pointer font-medium text-base text-[#343434]">
+          className="cursor-pointer font-medium text-sm md:text-base text-[#343434]">
           Monthly
         </span>
         <label>
@@ -46,7 +46,7 @@ const Pricing = () => {
         </label>
         <span
           onClick={handleClickAnnual}
-          className="cursor-pointer font-medium text-base text-[#343434]">
+          className="cursor-pointer font-medium text-sm md:text-base text-[#343434]">
           Annually
         </span>
       </div>
@@ -60,25 +60,26 @@ const Pricing = () => {
             )}>
             <h3
               className={cn(
-                'mb-6 text-[24px] font-bold  text-center leading-[32px]',
+                'mb-6 text-xl md:text-2xl font-bold text-center',
                 list.monthly !== '$12' ? 'text-dark_red' : 'text-white'
               )}>
               {list.header}
             </h3>
             <p
               className={cn(
-                'text-center text-base',
+                'text-center text-sm md:text-base',
                 list.monthly !== '$12' ? 'text-[#969696]' : 'text-[#ececec]'
               )}>
               {list.description}
             </p>
             <div
               className={cn(
-                'text-center text-[#969699] font-medium text-base mb-[42px]'
+                'text-center text-[#969699] font-medium text-sm md:text-base my-6 md:my-9',
+                list.monthly === '$12' && 'text-slate-200'
               )}>
               <strong
                 className={cn(
-                  'text-[56px] font-bold text-white leading-[60px]',
+                  'text-3xl md:text-5xl font-bold text-white',
                   list.monthly !== '$12' ? 'text-dark_red' : 'text-white'
                 )}>
                 {!isChecked ? list.monthly : list.annually}
@@ -87,7 +88,7 @@ const Pricing = () => {
             </div>
             <Button
               className={cn(
-                'inline-block w-full py-3 px-[65px] border-none mb-[48px] font-bold text-base text-center ',
+                'inline-block w-full py-3 px-[65px] border-none mb-[48px] font-bold text-sm md:text-base text-center ',
                 list.monthly !== '$12'
                   ? 'bg-red_bg text-white'
                   : 'bg-white text-red_bg'
@@ -100,7 +101,7 @@ const Pricing = () => {
                 <li
                   key={item}
                   className={cn(
-                    'flex items-center font-semibold',
+                    'flex items-center font-medium md:font-semibold',
                     list.monthly !== '$12' ? 'text-dark_red' : '',
                     list.monthly === '$5' && index >= list.ul.length - 2
                       ? 'line-through'

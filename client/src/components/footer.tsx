@@ -1,16 +1,17 @@
 import { company, support, works } from '@/lib/data';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
     <footer className="bg-[#f9f9f9] mx-auto max-w-[1440px] md:pt-[79px] p-6 pb-md:[20px] md:px-[100px]">
       <div className="flex flex-col md:flex-row gap-8 md:justify-between">
         <div className="flex md:flex-col flex-wrap gap-8">
-          <div className="flex items-center gap-[7.5px]">
+          <Link to="/" className="flex items-center gap-[7.5px]">
             <img src="images/footer-logo.svg" alt="GiftChain.ai logo" />
             <span className="text-dark_red font-semibold text-xl">
               GiftChain.ai
             </span>
-          </div>
+          </Link>
           <p className="text-[#343434] text-base md:text-lg md:w-[235px] font-normal">
             Manage gifts easily. Everywhere, every time.
           </p>

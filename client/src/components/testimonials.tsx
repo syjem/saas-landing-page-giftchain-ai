@@ -4,7 +4,7 @@ const Testimonials = () => {
   return (
     <section id="customer" className="p-6 lg:px-[100px] lg:pb-[165px]">
       <div className="flex justify-between items-center mb-6 lg:mb-[60px]">
-        <h2 className="font-bold text-xl lg:text-[40px] lg:leading-[81px] text-dark_red">
+        <h2 className="font-bold text-center md:text-start text-2xl lg:text-[40px] lg:leading-[81px] text-dark_red">
           GiftChain is loved by users
         </h2>
         <div className="md:items-center md:gap-4 hidden md:flex">
@@ -27,12 +27,12 @@ const Testimonials = () => {
             className="relative min-h-fit md:h-auto w-auto max-w-[384px] lg:w-full rounded-[20px] p-8 border border-[#eaeaea] pb-20">
             <div className="flex items-center gap-5 mb-6">
               <img
-                className="size-[72px] rounded-full"
+                className="size-14 md:size-[72px] rounded-full"
                 src={customer.img}
                 aria-label="Customer Avatar"
               />
               <div className="w-full flex gap-[6px] flex-col">
-                <h3 className="text-lg font-semibold mb-0 text-[#343434]">
+                <h3 className="text-base md:text-lg font-semibold mb-0 text-[#343434]">
                   {customer.name}
                 </h3>
                 <p className="text-left text-sm font-normal m-0 text-[#969696]">
